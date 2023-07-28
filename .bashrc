@@ -5,37 +5,15 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
-# User specific aliases and functions
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/user/pengzhangzhi/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/user/pengzhangzhi/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/user/pengzhangzhi/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/user/pengzhangzhi/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-export LD_LIBRARY_PATH=/user/pengzhangzhi/anaconda3/envs/squad/lib:$LD_LIBRARY_PATH
 alias nv="nvidia-smi"
 alias wnv="watch -n0.1 nvidia-smi"
-alias torch="source activate torch"
-alias nt="conda activate nightly_torch"
 alias py='python'
 alias train="python train.py"
 alias att="tmux attach -t"
 alias tnew="tmux new -s"
 alias tls="tmux ls"
 alias py='python'
-source activate torch
+alias act='conda activate'
 
 
 # Detect which `ls` flavor is in use
@@ -79,5 +57,3 @@ alias reload="exec ${SHELL} -l"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
-export CUDA_HOME=/share/apps/cuda10.1
-export PAHT=$PATH:/user/pengzhangzhi/.local/bin
