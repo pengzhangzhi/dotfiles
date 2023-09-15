@@ -14,6 +14,7 @@ alias tnew="tmux new -s"
 alias tls="tmux ls"
 alias py='python'
 alias act='conda activate'
+alias torch_cuda='python -c "import torch; print(torch.cuda.is_available())"'
 
 
 # Detect which `ls` flavor is in use
